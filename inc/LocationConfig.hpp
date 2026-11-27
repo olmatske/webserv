@@ -39,21 +39,21 @@ class LocationConfig // everything from the .conf file in default.conf
 	void	setCgi( const std::string& extension, const std::string& path );
 
 	//getters
-	const std::string&							getLocation( void ) const;
-	const std::string&							getRoot( void ) const;
-	const std::vector<std::string>&				getIndex( void ) const;
-	const std::set<std::string>&				getAllowedMethods( void ) const;
-	bool										getAutoindex( void ) const;
-	int											getReturnCode( void ) const;
-	const std::string&							getReturnPage( void ) const;
-	const std::string&							getUploadStore( void ) const;
-	const std::map<std::string, std::string>& 	getCgi( void ) const;
+	const std::string&							getLocation( void ) const;			// -> olmatske
+	const std::string&							getRoot( void ) const;				// -> olmatske
+	const std::vector<std::string>&				getIndex( void ) const;				// -> olmatske
+	const std::set<std::string>&				getAllowedMethods( void ) const;	// -> olmatske
+	bool										getAutoindex( void ) const;			// -> olmatske
+	int											getReturnCode( void ) const;		// -> olmatske
+	const std::string&							getReturnPage( void ) const;		// -> olmatske
+	const std::string&							getUploadStore( void ) const;		// -> olmatske
+	const std::map<std::string, std::string>& 	getCgi( void ) const;				// -> olmatske
 
-	bool		isMethodAllowed( const std::string& method ) const;
-	bool		hasReturnCode( void ) const;
-	bool		hasUploadStore( void ) const;
-	bool		isCgi( const std::string& extension ) const;
-	std::string	getCgiPath( const std::string& extension ) const;
+	bool		isMethodAllowed( const std::string& method ) const;					// -> olmatske
+	bool		hasReturnCode( void ) const;										// -> olmatske
+	bool		hasUploadStore( void ) const;										// -> olmatske
+	bool		isCgi( const std::string& extension ) const;						// -> olmatske
+	std::string	getCgiPath( const std::string& extension ) const;					// -> olmatske
 };
 
 #endif
