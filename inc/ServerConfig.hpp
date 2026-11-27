@@ -7,7 +7,7 @@
 # include <string>
 # include <vector>
 
-class ServerConfig
+class ServerConfig // everything from the .conf file in default.conf
 {
 	private:
 
@@ -41,7 +41,7 @@ class ServerConfig
 	const std::map<int, std::string>&	getErrorPages( void ) const;					// -> olmatske
 	const std::vector<LocationConfig>&	getLocations( void ) const;						// -> olmatske
 
-	const LocationConfig*	matchLocation( const std::string& uri ) const;				// -> olmatske
+	const LocationConfig*	matchLocation( const std::string& path ) const;				// -> olmatske
 	std::string				getErrorPage( int statusCode ) const;						// -> olmatske
 };
 
