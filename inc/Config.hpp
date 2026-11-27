@@ -21,7 +21,7 @@ class Config
 	void	parse( const std::string& filePath );
 
 	//getters
-	const std::vector<ServerConfig>&	getServers( void ) const;																								// -> ombilica
+	const std::vector<ServerConfig>&	getServers( void ) const;																			// -> ombilica
 	const ServerConfig*					matchServer( const std::string& listenHost, int listenPort, const std::string& serverName ) const;	// -> olmatske
 };
 
