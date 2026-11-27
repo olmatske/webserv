@@ -1,10 +1,10 @@
 #ifndef LOCATIONCONFIG_HPP
 # define LOCATIONCONFIG_HPP
 
-# include <map>;
-# include <vector>;
-# include <set>;
-# include <string>;
+# include <map>
+# include <vector>
+# include <set>
+# include <string>
 
 class LocationConfig // everything from the .conf file in default.conf
 {
@@ -17,7 +17,7 @@ class LocationConfig // everything from the .conf file in default.conf
 	bool								_autoindex;
 	int									_returnCode;
 	std::string							_returnPage;
-	std::string							_upload_store;
+	std::string							_uploadStore;
 	std::map<std::string, std::string>	_cgi;
 
 	public:
@@ -30,12 +30,12 @@ class LocationConfig // everything from the .conf file in default.conf
 	//setters
 	void	setLocation( const std::string& location );
 	void	setRoot( const std::string& root );
-	void	setIndex( const std::string& index );
-	void	setAllowedMethods( const std::string& allowedMethods );
+	void	addIndex( const std::string& index );
+	void	addAllowedMethods( const std::string& allowedMethods );
 	void	setAutoindex( bool on );
 	void	setReturnCode( int returnCode );
 	void	setReturnPage( const std::string& returnPage );
-	void	setUploadStore( const std::string& location );
+	void	setUploadStore( const std::string& path );
 	void	setCgi( const std::string& extension, const std::string& path );
 
 	//getters
@@ -49,11 +49,11 @@ class LocationConfig // everything from the .conf file in default.conf
 	const std::string&							getUploadStore( void ) const;
 	const std::map<std::string, std::string>& 	getCgi( void ) const;
 
-	bool		isMethodAllowed( const std::string& allowedMethods ) const;
+	bool		isMethodAllowed( const std::string& method ) const;
 	bool		hasReturnCode( void ) const;
 	bool		hasUploadStore( void ) const;
 	bool		isCgi( const std::string& extension ) const;
-	std::string	getCgiExtension( const std::string& extension ) const;
+	std::string	getCgiPath( const std::string& extension ) const;
 };
 
 #endif
